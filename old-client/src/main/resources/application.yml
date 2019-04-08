@@ -1,0 +1,14 @@
+server:
+  port: 9092
+
+spring:
+  application:
+    name: old-client
+  boot:
+    admin:
+      url: http://localhost:9090
+      #api-path: instances #To be removed and replaced with a re-direct on the server
+
+management:
+  security:
+    enabled: false

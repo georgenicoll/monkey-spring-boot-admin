@@ -1,0 +1,16 @@
+server:
+  port: 9091
+
+spring:
+  application:
+    name: new-client
+  boot:
+    admin:
+      client:
+        url: http://localhost:9090
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
