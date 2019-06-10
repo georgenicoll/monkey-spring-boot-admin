@@ -11,7 +11,7 @@ import org.springframework.security.web.server.SecurityWebFilterChain;
 @EnableAdminServer
 public class ServerApplication {
 
-    public static void main(final String[] args) {
+    public static void main(final String[] args) throws Exception {
         SpringApplication.run(ServerApplication.class, args);
     }
 
@@ -22,13 +22,5 @@ public class ServerApplication {
                 .and().csrf().disable()
                 .build();
     }
-
-    //private static final URI INSTANCES = URI.create("http://localhost:9090/instances");
-
-//    @Bean
-//    RouterFunction<ServerResponse> redirectRootToInstances() {
-//        return route(path("/api/applications"), req ->
-//                ServerResponse.temporaryRedirect(INSTANCES).build());
-//    }
 
 }

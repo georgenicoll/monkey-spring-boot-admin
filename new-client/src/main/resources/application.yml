@@ -1,5 +1,10 @@
 server:
-  port: 9091
+  port: 9443
+  ssl:
+    key-store: classpath:keystore.p12
+    key-store-password: keystore
+    keyStoreType: PKCS12
+    keyAlias: tomcat
 
 spring:
   application:

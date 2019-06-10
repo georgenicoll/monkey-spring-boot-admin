@@ -1,6 +1,5 @@
 package com.monkeynuthead.spring.boot.admin;
 
-import de.codecentric.boot.admin.server.domain.values.InstanceId;
 import de.codecentric.boot.admin.server.domain.values.Registration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,7 +12,6 @@ import org.springframework.web.util.UriComponentsBuilder;
 import reactor.core.publisher.Mono;
 
 import java.net.URI;
-import java.util.Collections;
 import java.util.Map;
 
 @RestController
@@ -24,7 +22,11 @@ public class ApiApplicationsController {
     private static final URI INSTANCES = URI.create("http://localhost:9090/instances");
     private static final String DELETE = "http://localhost:9090/instances/{id}";
 
-    private final WebClient webClient = WebClient.create();
+    private final WebClient webClient;
+
+    public ApiApplicationsController(final WebClient.Builder webClientBuilder) {
+        this.webClient = webClientBuilder.build();
+    }
 
     /**
      * This apes what de.codecentric.boot.admin.server.web.InstancesController#register does
