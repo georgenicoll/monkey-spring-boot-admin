@@ -26,4 +26,5 @@ an example of setting this up).
 
 After registration, in order for the spring boot admin server to be able to call the 
 SSL endpoint, either the certificate will need to be trusted *or* certificate validation
-can be turned off (see ``).
+can be turned off (see `com.monkeynuthead.spring.boot.admin.AdminServiceHttpConfiguration`
+for how to configure the InstanceWebClient).
